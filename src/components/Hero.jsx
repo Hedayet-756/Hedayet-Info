@@ -62,7 +62,7 @@ const Hero = () => {
           {/* Avatar with Glow */}
           <div className="absolute inset-0 blob-shape p-1 bg-gradient-to-br from-brand-purple to-brand-pink shadow-[0_0_50px_rgba(139,92,246,0.3)] animate-pulse-slow">
             <div className="w-full h-full bg-[#0B0118] blob-shape p-2">
-              <img alt="Hedayet Ullah" className="w-full h-full object-cover blob-shape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZdCVDhXvdip_1eCZamvC41a_sgE554FY_8o7X8MMSI2iF0g1lHBB5AVZfZds11YVT41DxFaSbPSGlZMYYQjfoms8_qHcuYxFaHnvDR4E9YQtIbsWloqIuR5YuSJfrtx7JKTRnfEbcbtGTGciRqvW9HMJ-uZMc6RGpu17e2fcRW9hFNjKj4LjDgVTcR5QKYxA4a2fo5Xs0IBaBBpaqIIf9kiUvLDWYudWPgw1KU8l20VtJBZqdn1CNOlb_wZ3UfkJCuWTEAaK4rNLZ" />
+              <img alt="Hedayet Ullah" className="w-full h-full object-contain blob-shape" src="/me.png" />
             </div>
           </div>
 

@@ -8,7 +8,7 @@ const About = () => {
         <div className="md:w-1/2 flex justify-center">
           <div className="relative w-72 h-72 md:w-96 md:h-96">
             <div className="absolute inset-0 bg-brand-pink/20 rounded-full blur-2xl"></div>
-            <img alt="Hedayet Ullah" className="relative z-10 w-full h-full object-cover rounded-full border-2 border-brand-pink/50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARukrJtI46do71AKNfF_yc8kJ8v0d0OlfijhFHyQ412_zWPMwio7VD9mlG9i9HYt6zuXD2IYS3XlE-htyKx86-yzi0rzM12akQHmh9N06NifVg--hE-VJ5VmqxEjZYI9B1sAb_2K73BR9rhCCmBxTOmQKyzxpczPjeM_g26YLSnRS4I2FTSJwePR-EOLXhLBV3kmaLsEi_wvRZYo2_pvECGis5Y7RZgT-tTB15Wg_ur5dPUh8odVn0BVEvzw3N3cS_KGc5aK_3sbJX" />
+            <img alt="Hedayet Ullah" className="relative z-10 w-full h-full object-cover rounded-full border-2 border-brand-pink/50" src="/avatar.png" />
           </div>
         </div>
         <div className="md:w-1/2 space-y-6">
