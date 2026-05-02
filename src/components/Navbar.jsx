@@ -67,7 +67,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu Overlay */}
       <div className={`
-        fixed inset-0 bg-[#0B0118] z-[90] flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden
+        fixed inset-0 bg-[#0B0118] z-[90] flex flex-col items-center justify-center pt-24 transition-all duration-500 ease-in-out md:hidden
         ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
       `}>
         {/* Glow Effects for the menu background */}
@@ -101,6 +101,12 @@ const Navbar = () => {
           </a>
           <a href="https://www.linkedin.com/in/hedayet-ullah-a39525313" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-brand-purple transition-all">
             <img alt="LinkedIn" className="w-6 h-6" src="/linkedin.svg" />
+          </a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=uhedayet756@gmail.com" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-brand-purple transition-all">
+            <img alt="Gmail" className="w-6 h-6" src="/gmail-old.svg" />
+          </a>
+          <a href="https://wa.me/8801518792967" className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 border border-white/10 hover:border-brand-purple transition-all">
+            <img alt="WhatsApp" className="w-6 h-6" src="/whatsapp.svg" />
           </a>
         </div>
       </div>

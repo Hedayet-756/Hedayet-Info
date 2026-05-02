@@ -55,8 +55,9 @@ const Contact = () => {
       <div className="flex justify-center space-x-6 mt-16">
         {[
           { alt: 'GitHub', icon: '/github.svg', href: 'https://github.com/Hedayet-756' },
-          { alt: 'Gmail', icon: '/gmail-old.svg', href: 'mailto:uhedayet756@gmail.com' },
+          { alt: 'Gmail', icon: '/gmail-old.svg', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=uhedayet756@gmail.com' },
           { alt: 'LinkedIn', icon: '/linkedin.svg', href: 'https://www.linkedin.com/in/hedayet-ullah-a39525313' },
+          { alt: 'WhatsApp', icon: '/whatsapp.svg', href: 'https://wa.me/8801518792967' },
         ].map((social, i) => (
           <a key={i} className="w-10 h-10 flex items-center justify-center rounded-full bg-zinc-900 border border-zinc-800 hover:border-brand-purple transition-all" href={social.href} target="_blank" rel="noopener noreferrer">
             <img alt={social.alt} className="w-5 h-5" src={social.icon} />

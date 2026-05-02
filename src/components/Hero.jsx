@@ -46,7 +46,7 @@ const Hero = () => {
             {[
               { alt: 'GitHub', src: githubIcon.src || githubIcon, href: 'https://github.com/Hedayet-756' },
               { alt: 'LinkedIn', src: linkedinIcon.src || linkedinIcon, href: 'https://www.linkedin.com/in/hedayet-ullah-a39525313' },
-              { alt: 'Mail', src: gmailIcon.src || gmailIcon, href: 'mailto:uhedayet756@gmail.com' }
+              { alt: 'Mail', src: gmailIcon.src || gmailIcon, href: 'https://mail.google.com/mail/?view=cm&fs=1&to=uhedayet756@gmail.com' }
             ].map((social) => (
               <a key={social.alt} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center bg-white/5 hover:border-brand-purple hover:bg-white/10 transition-all" href={social.href} target="_blank" rel="noopener noreferrer">
                 <img alt={social.alt} className="w-5 h-5 opacity-80 group-hover:opacity-100" src={social.src} />

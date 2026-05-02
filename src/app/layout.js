@@ -7,7 +7,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Meriem | Full Stack Developer Portfolio",
+  title: "Hedayet | Full Stack Developer Portfolio",
   description: "Crafting modern, responsive, and user-friendly websites with passion and precision.",
 };
 
