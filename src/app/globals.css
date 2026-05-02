@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-purple: #8B5CF6;
+  --color-brand-pink: #EC4899;
+  --color-brand-dark: #0B0118;
+  --font-sans: "Inter", "sans-serif";
+}
+
+:root {
+  --background: #0B0118;
+  --foreground: #ffffff;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  /* Grid background pattern */
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@layer utilities {
+  /* Glow effects */
+  .glow-purple {
+    filter: blur(100px);
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(139, 92, 246, 0) 70%);
+  }
+
+  .glow-pink {
+    filter: blur(100px);
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, rgba(236, 72, 153, 0) 70%);
+  }
+
+  /* Glassmorphism */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+  }
+
+  /* Custom Image Shapes */
+  .blob-shape {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    overflow: hidden;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(90deg, #8B5CF6 0%, #EC4899 100%);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-gradient:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px #8B5CF6;
+  }
+  
+  .skill-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 4px;
+  }
+
+  .tab-active {
+    background: linear-gradient(90deg, #8B5CF6 0%, #EC4899 100%);
+  }
+}
