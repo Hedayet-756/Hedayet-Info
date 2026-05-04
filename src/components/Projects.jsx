@@ -115,9 +115,9 @@ const Projects = () => {
       description: "A comprehensive news portal providing real-time updates and categorized news articles for a seamless reading experience.",
       details: "The Dragon News project is a dynamic news aggregation platform where users can browse articles by category, read detailed news items, and stay updated with live breaking news tickers.",
       image: "/Dragon news.png",
-      techStack: ["React", "Tailwind CSS", "React Router", "DaisyUI"],
-      liveLink: "https://dragon-news-46.netlify.app/",
-      repoLink: "https://github.com/Hedayet-756/Dragon-News",
+      techStack: ["Next.js", "Tailwind CSS", "React Router", "DaisyUI"],
+      liveLink: "https://dragon-news-next.netlify.app/",
+      repoLink: "https://github.com/Hedayet-756/Dragon-news-next",
       challenges: "One of the primary challenges was implementing a robust client-side routing system that handles dynamic category filtering while maintaining a smooth user experience.",
       futurePlans: "Plans to integrate a user-specific dashboard, dark mode toggle, and a newsletter subscription feature using Firebase."
     },
