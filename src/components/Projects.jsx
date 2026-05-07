@@ -8,7 +8,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
     <div className="fixed inset-0 z-[150] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose}></div>
       <div className="relative bg-[#0B0118] border border-white/10 rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl glass-card animate-scale-up">
-        <button 
+        <button
           onClick={onClose}
           className="absolute top-6 right-6 text-gray-400 hover:text-white z-10 p-2 bg-white/5 rounded-full"
         >
@@ -24,7 +24,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 
         <div className="p-8 md:p-10 -mt-12 relative z-10">
           <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
-          
+
           <div className="flex flex-wrap gap-2 mb-8">
             {project.techStack.map((tech, i) => (
               <span key={i} className="px-3 py-1 bg-brand-purple/10 border border-brand-purple/20 text-brand-purple rounded-full text-xs font-semibold">
@@ -90,10 +90,10 @@ const ProjectCard = ({ project, onOpenDetails }) => (
       </p>
       <div className="mt-auto flex items-center justify-between">
         <a className="flex items-center gap-2 text-sm text-gray-300 hover:text-white" href={project.repoLink} target="_blank" rel="noopener noreferrer">
-          Repository 
+          Repository
           <img alt="github" className="w-5 h-5" src="/github.svg" />
         </a>
-        <button 
+        <button
           onClick={() => onOpenDetails(project)}
           className="btn-gradient px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider"
         >
@@ -116,7 +116,7 @@ const Projects = () => {
       details: "The Dragon News project is a dynamic news aggregation platform where users can browse articles by category, read detailed news items, and stay updated with live breaking news tickers.",
       image: "/Dragon news.png",
       techStack: ["Next.js", "Tailwind CSS", "React Router", "DaisyUI"],
-      liveLink: "https://dragon-news-next.netlify.app/",
+      liveLink: "https://dragon-news-next-seven.vercel.app",
       repoLink: "https://github.com/Hedayet-756/Dragon-news-next",
       challenges: "One of the primary challenges was implementing a robust client-side routing system that handles dynamic category filtering while maintaining a smooth user experience.",
       futurePlans: "Plans to integrate a user-specific dashboard, dark mode toggle, and a newsletter subscription feature using Firebase."
@@ -152,17 +152,17 @@ const Projects = () => {
   return (
     <section className="py-24 px-4 md:px-12 bg-zinc-950/30" id="projects">
       <h2 className="text-4xl font-bold text-center mb-8">My Projects</h2>
-      
+
       {/* Filter Tabs */}
       <div className="flex justify-center mb-16">
         <div className="inline-flex p-1 bg-zinc-900/50 rounded-full border border-gray-800">
-          <button 
+          <button
             onClick={() => setFilter('Web Application')}
             className={`${filter === 'Web Application' ? 'tab-active' : 'text-gray-400 hover:text-white'} px-6 py-2 rounded-full text-sm font-semibold transition-colors`}
           >
             Web Application
           </button>
-          <button 
+          <button
             onClick={() => setFilter('Mobile application')}
             className={`${filter === 'Mobile application' ? 'tab-active' : 'text-gray-400 hover:text-white'} px-6 py-2 rounded-full text-sm font-semibold transition-colors`}
           >
@@ -175,10 +175,10 @@ const Projects = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project, index) => (
-            <ProjectCard 
-              key={index} 
-              project={project} 
-              onOpenDetails={(p) => setSelectedProject(p)} 
+            <ProjectCard
+              key={index}
+              project={project}
+              onOpenDetails={(p) => setSelectedProject(p)}
             />
           ))
         ) : (
@@ -187,10 +187,10 @@ const Projects = () => {
       </div>
 
       {/* Details Modal */}
-      <ProjectModal 
-        project={selectedProject} 
-        isOpen={!!selectedProject} 
-        onClose={() => setSelectedProject(null)} 
+      <ProjectModal
+        project={selectedProject}
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
       />
     </section>
   );
