@@ -36,7 +36,7 @@ const Hero = () => {
 
         <div className="flex flex-wrap items-center gap-6 pt-4">
           <a
-            href="https://drive.google.com/file/d/1s0efRM_U5MiUC_ht0JSAu07q4OXQwa22export=download&id=1s0efRM_U5MiUC_ht0JSAu07q4OXQwa22)"
+            href="https://drive.google.com/file/d/1s0efRM_U5MiUC_ht0JSAu07q4OXQwa22/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-gradient px-10 py-4 rounded-full font-bold text-lg flex items-center gap-3 shadow-lg shadow-brand-purple/20"
