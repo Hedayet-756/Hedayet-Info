@@ -35,12 +35,17 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-wrap items-center gap-6 pt-4">
-          <button className="btn-gradient px-10 py-4 rounded-full font-bold text-lg flex items-center gap-3 shadow-lg shadow-brand-purple/20">
+          <a
+            href="https://drive.google.com/file/d/1s0efRM_U5MiUC_ht0JSAu07q4OXQwa22export=download&id=1s0efRM_U5MiUC_ht0JSAu07q4OXQwa22)"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-gradient px-10 py-4 rounded-full font-bold text-lg flex items-center gap-3 shadow-lg shadow-brand-purple/20"
+          >
             Download Resume
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5"></path>
             </svg>
-          </button>
+          </a>
 
           <div className="flex space-x-4 items-center">
             {[

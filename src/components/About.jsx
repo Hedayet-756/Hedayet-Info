@@ -14,10 +14,10 @@ const About = () => {
         <div className="md:w-1/2 space-y-6">
           <h3 className="text-3xl font-bold text-brand-pink">I'm Hedayet Ullah</h3>
           <p className="text-gray-300 leading-relaxed text-lg">
-            Complete Web Development student at Programming Hero and freelance web/mobile developer in Bangladesh.
+            Passionate and detail-oriented Junior Frontend Developer with a strong foundation in HTML, CSS, and JavaScript. Currently expanding skills in React to build dynamic and responsive web applications. Proficient in using development tools like Git and GitHub.
           </p>
           <p className="text-gray-300 leading-relaxed">
-            I develop customized solutions for startups and companies using Next.js, React and other technologies.
+            Possess excellent problem-solving, communication, and teamwork skills, ready to contribute effectively in a collaborative development environment.
           </p>
           <div className="space-y-4 pt-4">
             {/* Service Items */}
