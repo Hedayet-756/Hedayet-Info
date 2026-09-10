@@ -1,41 +1,89 @@
 "use client";
 import React from 'react';
-import html5Icon from '../../public/html5.svg';
-import reactIcon from '../../public/react.svg';
-import nextIcon from '../../public/next.svg';
-import jsIcon from '../../public/js.svg';
+import { motion } from 'framer-motion';
 
-const SkillItem = ({ name, icon, dots, colorClass }) => (
-  <div className="flex items-center justify-between glass-card p-4 transition-all hover:scale-105 hover:border-brand-purple/50">
-    <div className="flex items-center gap-4">
-      <img alt={name} className="w-8 h-8 object-contain" src={icon.src || icon} />
-      <div className="flex space-x-1">
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className={`skill-dot ${i < dots ? colorClass : 'bg-zinc-700'}`}
-          ></div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
+// আইকন পাথগুলো সরাসরি দেওয়া হলো যেন সহজে লোড হয়
+const skillsData = [
+  {
+    category: "Frontend Development",
+    items: [
+      { name: "HTML5", icon: "/html5.svg", level: "90%", color: "from-orange-500 to-amber-500" },
+      { name: "CSS3 / Tailwind", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg", level: "85%", color: "from-cyan-400 to-blue-500" },
+      { name: "JavaScript (ES6+)", icon: "/js.svg", level: "80%", color: "from-yellow-400 to-amber-500" },
+      { name: "React.js", icon: "/react.svg", level: "78%", color: "from-cyan-400 to-teal-400" },
+      { name: "Next.js", icon: "/next.svg", level: "70%", color: "from-white to-gray-400" },
+    ]
+  },
+  {
+    category: "Tools & Backend Basics",
+    items: [
+      { name: "Git & GitHub", icon: "/github.svg", level: "82%", color: "from-purple-500 to-indigo-500" },
+      { name: "Node.js / Express", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg", level: "65%", color: "from-green-500 to-emerald-400" },
+      { name: "VS Code", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg", level: "88%", color: "from-blue-500 to-cyan-500" },
+      { name: "Vercel / Firebase", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg", level: "75%", color: "from-yellow-500 to-orange-500" },
+    ]
+  }
+];
 
 const Skills = () => {
-  const skills = [
-    { name: 'HTML5', icon: html5Icon, dots: 7, colorClass: 'bg-orange-500' },
-    { name: 'JavaScript', icon: jsIcon, dots: 6, colorClass: 'bg-yellow-400' },
-    { name: 'React', icon: reactIcon, dots: 6, colorClass: 'bg-cyan-400' },
-    { name: 'Next.js', icon: nextIcon, dots: 5, colorClass: 'bg-white' },
-  ];
-
   return (
-    <section className="py-24 px-4 md:px-12 relative overflow-hidden" id="skills">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full glow-purple -z-10 opacity-20"></div>
-      <h2 className="text-4xl font-bold text-center mb-16">My Skills</h2>
-      <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
-        {skills.map((skill, index) => (
-          <SkillItem key={index} {...skill} />
+    <section className="py-12 px-4 md:px-12 relative overflow-hidden" id="skills">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-purple/15 blur-[120px] rounded-full -z-10 pointer-events-none"></div>
+
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-center mb-16"
+      >
+        <h2 className="text-4xl font-bold mb-3">Technical Skills</h2>
+        <p className="text-gray-400 text-sm max-w-md mx-auto">Technologies and tools I work with to build modern web applications.</p>
+      </motion.div>
+
+      {/* Skills Grid */}
+      <div className="max-w-5xl mx-auto space-y-12">
+        {skillsData.map((cat, catIndex) => (
+          <div key={catIndex}>
+            <h3 className="text-xl font-semibold mb-6 text-brand-pink border-l-4 border-brand-pink pl-3">{cat.category}</h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {cat.items.map((skill, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -6, scale: 1.02 }}
+                  className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-5 hover:border-white/20 transition-all duration-300 shadow-xl"
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-white/5 p-2.5 flex items-center justify-center border border-white/5">
+                      <img alt={skill.name} className="w-full h-full object-contain" src={skill.icon} />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white text-base">{skill.name}</h4>
+                      <span className="text-xs text-gray-400">{skill.level} Proficiency</span>
+                    </div>
+                  </div>
+
+                  {/* Progress Bar */}
+                  <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: skill.level }}
+                      transition={{ duration: 1, delay: 0.2 }}
+                      viewport={{ once: true }}
+                      className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </section>

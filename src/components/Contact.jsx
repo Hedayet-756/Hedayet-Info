@@ -3,43 +3,43 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section className="py-24 px-4 md:px-12 relative" id="contact">
+    <section className="py-12 px-4 md:px-12 relative" id="contact">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-3/4 glow-pink -z-10"></div>
       <h2 className="text-4xl font-bold text-center mb-16">Contact</h2>
-      
+
       <div className="max-w-2xl mx-auto glass-card p-8 md:p-12">
         <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
           <input type="hidden" name="access_key" value="f8a6c9be-448f-4819-8cb1-1779043fc76b" />
           <input type="hidden" name="subject" value="New Contact Form Submission" />
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-2" htmlFor="name">Name</label>
-            <input 
-              className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-brand-purple focus:border-transparent transition-all outline-none" 
-              id="name" 
+            <input
+              className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-brand-purple focus:border-transparent transition-all outline-none"
+              id="name"
               name="name"
-              placeholder="Your Name" 
-              type="text" 
+              placeholder="Your Name"
+              type="text"
               required
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-2" htmlFor="email">Email</label>
-            <input 
-              className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-brand-purple focus:border-transparent transition-all outline-none" 
-              id="email" 
+            <input
+              className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-brand-purple focus:border-transparent transition-all outline-none"
+              id="email"
               name="email"
-              placeholder="Your Email" 
-              type="email" 
+              placeholder="Your Email"
+              type="email"
               required
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-2" htmlFor="message">Message</label>
-            <textarea 
-              className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-brand-purple focus:border-transparent transition-all outline-none" 
-              id="message" 
+            <textarea
+              className="w-full bg-zinc-900/50 border border-zinc-800 rounded-xl px-4 py-3 text-white focus:ring-2 focus:ring-brand-purple focus:border-transparent transition-all outline-none"
+              id="message"
               name="message"
-              placeholder="How can I help you?" 
+              placeholder="How can I help you?"
               rows="5"
               required
             ></textarea>

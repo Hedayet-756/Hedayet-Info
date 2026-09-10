@@ -1,5 +1,12 @@
 "use client";
 import React, { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+
+// Swiper এর প্রয়োজনীয় CSS ফাইলসমূহ
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
   if (!isOpen) return null;
@@ -75,7 +82,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
 };
 
 const ProjectCard = ({ project, onOpenDetails }) => (
-  <article className="glass-card overflow-hidden group flex flex-col h-full">
+  <article className="glass-card overflow-hidden group flex flex-col h-full border border-white/10 rounded-2xl bg-zinc-900/40">
     <div className="relative aspect-video overflow-hidden">
       <img
         alt={project.title}
@@ -84,7 +91,7 @@ const ProjectCard = ({ project, onOpenDetails }) => (
       />
     </div>
     <div className="p-6 flex flex-col flex-grow">
-      <h3 className="text-xl font-bold mb-3">{project.title}</h3>
+      <h3 className="text-xl font-bold mb-3 text-white">{project.title}</h3>
       <p className="text-gray-400 text-sm mb-6 leading-relaxed line-clamp-3">
         {project.description}
       </p>
@@ -109,6 +116,30 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
+    {
+      title: "DriveFleet",
+      category: "Web Application",
+      description: "A modern, luxury-driven web application designed to make premium car rentals seamless, fast, and secure. Built with cutting-edge technologies, it provides users with an elite browsing and booking experience, ensuring their journey starts with the perfect ride.",
+      details: "The DriveFleet project is a comprehensive car rental platform that offers a seamless booking experience with real-time availability and pricing information.",
+      image: "/DriveFleet.png",
+      techStack: ["Next.js", "Tailwind CSS", "React Router", "DaisyUI"],
+      liveLink: "https://drivefleet-chi.vercel.app/",
+      repoLink: "https://github.com/Hedayet-756/DriveFleet",
+      challenges: "One of the primary challenges was implementing a robust client-side routing system that handles dynamic category filtering while maintaining a smooth user experience.",
+      futurePlans: "Plans to integrate a user-specific dashboard, dark mode toggle, and a newsletter subscription feature using Firebase."
+    },
+    {
+      title: "StartupForge",
+      category: "Web Application",
+      description: "StartupForge is a comprehensive web platform designed to bridge the gap between startup founders, ambitious entrepreneurs, and job seekers. It empowers founders to register their ventures, manage applications, and post career opportunities, while allowing candidates to explore and apply seamlessly.",
+      details: "The StartupForge project is a dynamic platform that connects startup founders with potential employees and investors.",
+      image: "/StartupForge.png",
+      techStack: ["Next.js", "Tailwind CSS", "React Router", "DaisyUI"],
+      liveLink: "https://startupforge-client-tan.vercel.app/",
+      repoLink: "https://github.com/Hedayet-756/StartupForge_client",
+      challenges: "One of the primary challenges was implementing a robust client-side routing system that handles dynamic category filtering while maintaining a smooth user experience.",
+      futurePlans: "Plans to integrate a user-specific dashboard, dark mode toggle, and a newsletter subscription feature using Firebase."
+    },
     {
       title: "Dragon News",
       category: "Web Application",
@@ -150,7 +181,7 @@ const Projects = () => {
   const filteredProjects = projects.filter(p => p.category === filter);
 
   return (
-    <section className="py-24 px-4 md:px-12 bg-zinc-950/30" id="projects">
+    <section className="py-12 px-4 md:px-12 bg-zinc-950/30" id="projects">
       <h2 className="text-4xl font-bold text-center mb-8">My Projects</h2>
 
       {/* Filter Tabs */}
@@ -171,18 +202,33 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      {/* Projects Swiper Slider */}
+      <div className="max-w-7xl mx-auto relative px-4">
         {filteredProjects.length > 0 ? (
-          filteredProjects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              project={project}
-              onOpenDetails={(p) => setSelectedProject(p)}
-            />
-          ))
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={30}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className="pb-14 mySwiper"
+          >
+            {filteredProjects.map((project, index) => (
+              <SwiperSlide key={index} className="h-auto">
+                <ProjectCard
+                  project={project}
+                  onOpenDetails={(p) => setSelectedProject(p)}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         ) : (
-          <p className="text-center col-span-full text-gray-500 py-12 italic">No projects in this category yet.</p>
+          <p className="text-center text-gray-500 py-12 italic">No projects in this category yet.</p>
         )}
       </div>
 

@@ -27,7 +27,7 @@ const Hero = () => {
             Hi, I'm <span className="text-white">Hedayet</span>
           </h1>
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-brand-purple to-brand-pink bg-clip-text text-transparent">
-            Full stack developer
+            Junior Frontend Developer
           </h2>
           <p className="text-gray-400 max-w-lg text-lg md:text-xl leading-relaxed">
             Crafting modern, responsive, and user-friendly websites with passion and precision.
