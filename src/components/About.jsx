@@ -52,7 +52,7 @@ const About = () => {
 
   return (
     <section className="py-12 px-4 md:px-12 bg-brand-dark/40 overflow-hidden" id="about">
-      {/* Title */}
+      {/* Section Title */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -63,43 +63,112 @@ const About = () => {
         About Me
       </motion.h2>
 
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
-        {/* Avatar Section */}
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-16">
+        {/* Left Side: Modern Code Visual Component */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="md:w-1/2 flex justify-center"
+          className="md:w-1/2 w-full flex justify-center sticky top-24"
         >
-          <div className="relative w-72 h-72 md:w-96 md:h-96">
-            <div className="absolute inset-0 bg-brand-pink/20 rounded-full blur-3xl animate-pulse"></div>
-            <img
-              alt="Hedayet Ullah"
-              className="relative z-10 w-full h-full object-cover rounded-full border-2 border-brand-pink/50 shadow-2xl shadow-brand-pink/20"
-              src="/avatar.png"
-            />
+          <div className="relative w-full max-w-md">
+            {/* Background Glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-purple/30 to-brand-pink/30 rounded-3xl blur-2xl -z-10 animate-pulse"></div>
+
+            {/* Code Window UI */}
+            <div className="bg-[#0f0b1e]/90 border border-white/10 rounded-2xl shadow-2xl overflow-hidden backdrop-blur-xl">
+              {/* Window Header */}
+              <div className="px-4 py-3 bg-white/5 border-b border-white/10 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                </div>
+                <span className="text-xs text-gray-400 font-mono">developer.js</span>
+              </div>
+
+              {/* Code Content */}
+              <div className="p-6 font-mono text-sm leading-relaxed space-y-2">
+                <p>
+                  <span className="text-purple-400">const</span> <span className="text-yellow-300">developer</span> = &#123;
+                </p>
+                <p className="pl-4">
+                  <span className="text-blue-400">name</span>: <span className="text-emerald-400">'Hedayet Ullah'</span>,
+                </p>
+                <p className="pl-4">
+                  <span className="text-blue-400">role</span>: <span className="text-emerald-400">'Junior Web Developer'</span>,
+                </p>
+                <p className="pl-4">
+                  <span className="text-blue-400">skills</span>: [
+                  <span className="text-amber-300">'React'</span>, <span className="text-amber-300">'Next.js'</span>, <span className="text-amber-300">'Tailwind'</span>
+                  ],
+                </p>
+                <p className="pl-4">
+                  <span className="text-blue-400">passionate</span>: <span className="text-purple-300">true</span>,
+                </p>
+                <p className="pl-4">
+                  <span className="text-blue-400">codeStatus</span>: <span className="text-emerald-400">'Building awesome Web Experiences 🚀'</span>
+                </p>
+                <p>&#125;;</p>
+
+                {/* Animated Cursor */}
+                <div className="flex items-center gap-1 pt-2">
+                  <span className="text-pink-500">&gt;</span>
+                  <span className="text-gray-400">developer.build()</span>
+                  <motion.span
+                    animate={{ opacity: [0, 1, 0] }}
+                    transition={{ repeat: Infinity, duration: 1 }}
+                    className="w-2 h-4 bg-brand-pink inline-block ml-1"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
 
-        {/* Text Content */}
+        {/* Right Side: Text, Education & Services */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="md:w-1/2 space-y-6"
+          className="md:w-1/2 space-y-8"
         >
-          <h3 className="text-3xl font-bold text-brand-pink">I'm Hedayet Ullah</h3>
-          <p className="text-gray-300 leading-relaxed text-lg">
-            Passionate and detail-oriented Junior Web Developer with a solid foundation in HTML, CSS, JavaScript, and React. Eager to continuously expand my skills in building interactive, user-friendly frontend applications and working with modern web workflow tools like Git and GitHub.
-          </p>
-          <p className="text-gray-300 leading-relaxed">
-            Dedicated to solving real-world problems through clean code, collaborating in team environments, and growing into a proficient full-stack developer over time.
-          </p>
+          <div>
+            <h3 className="text-3xl font-bold text-brand-pink mb-4">I'm Hedayet Ullah</h3>
+            <p className="text-gray-300 leading-relaxed text-lg mb-4">
+              Passionate and detail-oriented Junior Web Developer with a solid foundation in HTML, CSS, JavaScript, and React. Eager to continuously expand my skills in building interactive, user-friendly frontend applications and working with modern web workflow tools like Git and GitHub.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              Dedicated to solving real-world problems through clean code, collaborating in team environments, and growing into a proficient full-stack developer over time.
+            </p>
+          </div>
+
+          {/* Education Card */}
+          <div className="pt-2">
+            <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <span className="p-2 bg-brand-purple/20 text-brand-purple rounded-lg">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                </svg>
+              </span>
+              Education
+            </h4>
+
+            <div className="glass-card p-5 border-l-4 border-brand-purple bg-white/5 rounded-r-xl">
+              {/* <span className="text-xs font-semibold px-2.5 py-1 bg-brand-purple/20 text-brand-purple rounded-full">
+                Running / Student
+              </span> */}
+              <h5 className="text-lg font-bold text-white mt-2">B.Sc.(Pass)</h5>
+              <p className="text-gray-400 text-sm mt-1">National University</p>
+            </div>
+          </div>
 
           {/* Service Cards */}
-          <div className="space-y-4 pt-4">
+          <div className="space-y-4 pt-2">
+            <h4 className="text-xl font-bold text-white mb-4">What I Do</h4>
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -114,7 +183,7 @@ const About = () => {
                   {service.icon}
                 </span>
                 <div>
-                  <h4 className="font-semibold text-white">{service.title}</h4>
+                  <h5 className="font-semibold text-white">{service.title}</h5>
                   <p className="text-xs text-gray-400 mt-0.5">{service.description}</p>
                 </div>
               </motion.div>
