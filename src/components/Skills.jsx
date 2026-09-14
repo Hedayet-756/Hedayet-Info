@@ -7,20 +7,20 @@ const skillsData = [
   {
     category: "Frontend Development",
     items: [
-      { name: "HTML5", icon: "/html5.svg", level: "90%", color: "from-orange-500 to-amber-500" },
-      { name: "CSS3 / Tailwind", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg", level: "85%", color: "from-cyan-400 to-blue-500" },
-      { name: "JavaScript (ES6+)", icon: "/js.svg", level: "80%", color: "from-yellow-400 to-amber-500" },
-      { name: "React.js", icon: "/react.svg", level: "78%", color: "from-cyan-400 to-teal-400" },
-      { name: "Next.js", icon: "/next.svg", level: "70%", color: "from-white to-gray-400" },
+      { name: "HTML5", icon: "/html5.svg", experience: "1+ Years Experience", color: "from-orange-500 to-amber-500" },
+      { name: "CSS3 / Tailwind", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg", experience: "Practical Project Use", color: "from-cyan-400 to-blue-500" },
+      { name: "JavaScript (ES6+)", icon: "/js.svg", experience: "Core Competency", color: "from-yellow-400 to-amber-500" },
+      { name: "React.js", icon: "/react.svg", experience: "Primary Framework", color: "from-cyan-400 to-teal-400" },
+      { name: "Next.js", icon: "/next.svg", experience: "Modern Web Apps", color: "from-white to-gray-400" },
     ]
   },
   {
     category: "Tools & Backend Basics",
     items: [
-      { name: "Git & GitHub", icon: "/github.svg", level: "82%", color: "from-purple-500 to-indigo-500" },
-      { name: "Node.js / Express", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg", level: "65%", color: "from-green-500 to-emerald-400" },
-      { name: "VS Code", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg", level: "88%", color: "from-blue-500 to-cyan-500" },
-      { name: "Vercel / Firebase", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg", level: "75%", color: "from-yellow-500 to-orange-500" },
+      { name: "Git & GitHub", icon: "/github.svg", experience: "Version Control", color: "from-purple-500 to-indigo-500" },
+      { name: "Node.js / Express", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg", experience: "API & Backend Basics", color: "from-green-500 to-emerald-400" },
+      { name: "VS Code", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg", experience: "Primary IDE", color: "from-blue-500 to-cyan-500" },
+      { name: "Vercel / Firebase", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg", experience: "Deployment & Auth", color: "from-yellow-500 to-orange-500" },
     ]
   }
 ];
@@ -58,27 +58,16 @@ const Skills = () => {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -6, scale: 1.02 }}
-                  className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-5 hover:border-white/20 transition-all duration-300 shadow-xl"
+                  className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-5 hover:border-white/20 transition-all duration-300 shadow-xl flex items-center justify-between"
                 >
-                  <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-white/5 p-2.5 flex items-center justify-center border border-white/5">
                       <img alt={skill.name} className="w-full h-full object-contain" src={skill.icon} />
                     </div>
                     <div>
                       <h4 className="font-semibold text-white text-base">{skill.name}</h4>
-                      <span className="text-xs text-gray-400">{skill.level} Proficiency</span>
+                      <span className="text-xs text-brand-pink/80 font-medium">{skill.experience}</span>
                     </div>
-                  </div>
-
-                  {/* Progress Bar */}
-                  <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: skill.level }}
-                      transition={{ duration: 1, delay: 0.2 }}
-                      viewport={{ once: true }}
-                      className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
-                    />
                   </div>
                 </motion.div>
               ))}
